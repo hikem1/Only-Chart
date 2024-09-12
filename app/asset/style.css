@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Quicksand';
+    src: url("./font/Quicksand-VariableFont_wght.ttf");
+}
+
+*{
+    font-family: 'Quicksand';
+}
+
+header{
+    height: 72px;
+    background-color: #f8f8f8;    
+    font-size: 1rem;;
+}
+
+#connected{
+    width: 1rem;
+    height: 1rem;
+}
+
