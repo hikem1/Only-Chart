@@ -28,7 +28,7 @@
             <p id="error-message" class="text-danger"><?php echo $_SESSION['log']['error'] ?></p>
         </div>
         <?php } ?>
-        <button type="submit" class="btn btn-primary">Sign up</button>
+        <button type="submit" class="btn btn-sm btn-primary">Sign up</button>
         </form>
       </div>
 

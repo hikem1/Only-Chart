@@ -6,7 +6,7 @@
 ?>
 <div class="d-flex align-items-center">
     <?php if(!$status){ ?>
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal">
+    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal">
         Sign up
     </button>
     <?php }else{ ?>

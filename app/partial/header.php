@@ -1,4 +1,4 @@
-<header class="d-flex justify-content-between shadow position-relative px-2">
+<header class="d-flex justify-content-between shadow-lg position-relative px-2">
    
 <?php
     include_once 'logo.php';
