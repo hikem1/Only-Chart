@@ -14,7 +14,11 @@ header{
 }
 
 #connected{
-    width: 1rem;
-    height: 1rem;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+.nav-link{
+    font-size: 0.9rem !important;
 }
 

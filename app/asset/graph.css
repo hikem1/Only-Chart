@@ -1,6 +1,5 @@
 iframe{
     width: 100%;
-    height: calc(100vh - 72px);
-    min-height: 600px;
+    height: calc(100vh);
     margin: 0 !important;
 }
