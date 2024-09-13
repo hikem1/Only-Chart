@@ -14,10 +14,8 @@ class ZbClient{
 
     public function __construct()
     {
-        $this->client = Client::createChromeClient("../../drivers/chromedriver.exe", [
-            '--port=9516',
-            '--allow-running-insecure-content',
-            '--headless'
+        $this->client = Client::createFirefoxClient("../../drivers/geckodriver.exe", [
+        '--headless'
         ]); 
         $this->crawler = $this->client->request('GET', $this->url);
     }

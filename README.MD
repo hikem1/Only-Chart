@@ -5,6 +5,7 @@
 
 ## Needed
 
+- install firefox (not to use it.. just for crawling engine)
 - Create a zonebourse account (optionnal, if you want to retrieve the account graph models in the app)
 
 ## Environment
@@ -18,7 +19,7 @@
 - symfony/panther
 - dbrekelmans/bdi
 - symfony/var-dumper (optionnal)
-- chromedriver
+- geckodriver (firefox)
 - bootstrap 5
 
 ## Install
