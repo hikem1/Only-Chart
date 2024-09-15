@@ -10,10 +10,15 @@
         Sign up
     </button>
     <?php }else{ ?>
-        
-    <a type="button" class="btn btn-warning btn-sm d-flex text-dark" href="./logout.php">
-        <div id="connected" class="bg-success rounded-circle m-auto me-2"></div>
-        <?php echo $_SESSION['log']['email'] ?>
-    </a>
+
+    <div class="dropdown">
+  <button class="btn dropdown-toggle border" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fa-regular fa-user p-1"></i>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="./logout.php">Logout</a></li>
+    <li><a class="dropdown-item" href="#">Favorites</a></li>
+  </ul>
+</div>
     <?php } ?>
 </div>
