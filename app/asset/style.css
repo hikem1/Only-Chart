@@ -7,10 +7,29 @@
     font-family: 'Quicksand';
 }
 
+
+body{
+    height: 100vh;
+    background: rgb(255, 255, 255);
+}
+
 header{
-    height: 72px;
     background-color: #f8f8f8;    
     font-size: 1rem;;
+}
+
+img{
+    width: auto;
+    height: 80px;
+}
+
+.fa-star{
+    align-self: center;
+    color: #f5c344;
+}
+
+.fa-user{
+    align-self: center;
 }
 
 #connected{
@@ -18,7 +37,23 @@ header{
     height: 0.8rem;
 }
 
-.nav-link{
+button.nav-link{
     font-size: 0.9rem !important;
+    background: #f8f9fa !important;
+    color: #4b4a4a;
+
 }
 
+button.active{
+    font-weight: bold !important;
+    border-right: 2px solid #76cf62 !important;
+    border-left: 2px solid #76cf62 !important;
+    border-top: 2px solid #76cf62 !important;
+    background: #ffffff !important;
+    transition-duration: 0.2s;
+}
+
+#nav-tabContent{
+    /* box-shadow: 0px -1px 2px 0px rgba(0,0,0,0.1) !important; */
+    height: 50%;
+}
