@@ -1,1 +1,1 @@
-<img src="./app/asset/image/logo.png" alt="">
+<img class="mt-1" src="./app/asset/image/logo.png" alt="">
