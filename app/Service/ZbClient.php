@@ -20,6 +20,10 @@ class ZbClient{
         $this->crawler = $this->client->request('GET', $this->url);
     }
     
+    public function getClient(): Client
+    {
+        return $this->client;
+    }
     
     public function getLogError(): string
     {
@@ -40,7 +44,7 @@ class ZbClient{
 
     private function hideCookiesIframe(): void
     {
-        $this->client->waitFor('#appconsent')->children('iframe');
+        $this->client->waitFor('#appconsent', 1)->children('iframe');
         $iframe = $this->crawler->filter('#appconsent')->children('iframe');
         $this->client->executeScript('arguments[0].style.display = "none";', [$iframe->getElement(0)]);
     }

@@ -67,7 +67,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $zbClient = new ZbClient();
         $status = $zbClient->log($_POST['email'], $encryptService->getEncrypt());
-
+        $zbClient->getClient()->quit();
+        
         $_SESSION['log']['status'] = $status;
 
         if($status){

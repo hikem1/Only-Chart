@@ -44,7 +44,7 @@ class ZbInstrumentRepository extends ZbClient{
 
         $url = $this->baseUrl . $zbInstrument->getLink() . "graphiques/";
         $this->client->request("GET", $url);
-        $this->crawler = $this->client->waitFor("#prt_dynamic_chart_" . $zbInstrument->getId());
+        $this->crawler = $this->client->waitFor("#prt_dynamic_chart_" . $zbInstrument->getId(), 1);
         $grapLink = $this->crawler->filter("#prt_dynamic_chart_" . $zbInstrument->getId())->getAttribute('src');
         $zbInstrument->setGraph_link(htmlspecialchars_decode($grapLink));
 
