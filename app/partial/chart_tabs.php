@@ -1,5 +1,5 @@
-<nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+<nav class="bg-light border-bottom">
+    <div class="nav nav-tabs border-0" id="nav-tab" role="tablist">
 
     <?php 
         if(isset($_SESSION['selected_instrument'])){
