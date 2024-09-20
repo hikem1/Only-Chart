@@ -5,6 +5,7 @@ header("Access-Control-Allow-Origin: *");
 
 require_once ('../../vendor/autoload.php');
 
+use App\Model\ZbInstrument;
 use App\Service\ZbClient;
 use App\Repository\ZbInstrumentRepository;
 use App\Service\EncryptService;
@@ -54,34 +55,50 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
             });
         }
     }
-
     
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(isset($_POST['email']) && isset($_POST['password'])){
         unset($_SESSION['log']);
-
+        
         $encryptService = new EncryptService();
         $encryptService = $encryptService->encrypt($_POST['password']);
-
+        
         $zbClient = new ZbClient();
         $status = $zbClient->log($_POST['email'], $encryptService->getEncrypt());
         $zbClient->getClient()->quit();
         
         $_SESSION['log']['status'] = $status;
-
+        
         if($status){
             $_SESSION['log']['email'] = $_POST['email'];
             $_SESSION['log']['password'] = $encryptService->getEncrypt();
         }else{
             $_SESSION['log']['error'] = $zbClient->getLogError();
         }
-
+        
         $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : './index.php';
         header('Location: ' . $referer);
     }
+    
 
+    if(isset($_POST['fav-id'])){
+
+        $zbInstrumentRepository = new ZbInstrumentRepository;
+        $zbInstrument = new ZbInstrument();
+
+        $zbInstrument->setId(intval($_POST['fav-id']));
+        $zbInstrument->setName($_POST['name']);
+        $zbInstrument->setCode($_POST['code']);
+        $zbInstrument->setExchange_place($_POST['place']);
+        $zbInstrument->setLink($_POST['path']);
+
+        $zbInstrumentRepository->findGraphLink($zbInstrument);
+        $_SESSION['selected_instrument'][] = serialize($zbInstrument);
+        $referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : './index.php';
+        header('Location: ' . $referer);
+    }
 }
 
 
