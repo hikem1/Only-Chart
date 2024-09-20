@@ -1,6 +1,6 @@
 const resultModal = new bootstrap.Modal(document.querySelector('#resultModal'), {
     keyboard: false
 });
-const modalBody = document.querySelector('.modal-body');
+const modalBodyUl = document.querySelector('.modal-body > ul');
 
-modalBody.childElementCount > 1 ? resultModal.show() : resultModal.hide();
+modalBodyUl.childElementCount > 1 ? resultModal.show() : resultModal.hide();
