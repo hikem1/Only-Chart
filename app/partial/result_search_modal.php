@@ -14,17 +14,17 @@
         <ul id="result-list">
 
           <?php
-        if (isset($_SESSION['search_results'])) {
-          if (count($_SESSION['search_results'])) {
-            $zbInstruments = $_SESSION['search_results'];
-            foreach ($zbInstruments as $zbInstrument) {
-              
-              $objZbInstrument = unserialize($zbInstrument);
-              include "row_instrument.php";
+          if (isset($_SESSION['search_results'])) {
+            if (count($_SESSION['search_results'])) {
+              $zbInstruments = $_SESSION['search_results'];
+              foreach ($zbInstruments as $zbInstrument) {
+
+                $objZbInstrument = unserialize($zbInstrument);
+                include "row_instrument.php";
+              }
             }
           }
-        }
-        ?>
+          ?>
         </ul>
       </div>
     </div>
